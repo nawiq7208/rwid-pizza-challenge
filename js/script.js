@@ -85,3 +85,17 @@ toppingInputs.forEach((input) => {
 });
 
 updateResults();
+
+const resetOrder = () => {
+
+    document.querySelectorAll('input[name="pizza"]').forEach((input) => (input.checked = false));
+    document.querySelectorAll('input[name="size"]').forEach((input) => (input.checked = false));
+    document.querySelectorAll('input[name="topping"]').forEach((input) => (input.checked = false));
+
+    document.getElementById('pizza-result').textContent = '$0';
+    document.getElementById('size-result').textContent = '$0';
+    document.getElementById('topping-result').textContent = '$0';
+    document.getElementById('total-result').textContent = '$0';
+};
+
+document.getElementById('reset-order').addEventListener('click', resetOrder);
