@@ -67,3 +67,21 @@ function updateResults() {
     document.getElementById('topping-result').textContent = '$' + toppingPrice.toFixed(0);
     document.getElementById('total-result').textContent = '$' + totalPrice.toFixed(0);
 }
+
+const pizzaInputs = document.querySelectorAll('input[name="pizza"]');
+const sizeInputs = document.querySelectorAll('input[name="size"]');
+const toppingInputs = document.querySelectorAll('input[name="topping"]');
+
+pizzaInputs.forEach((input) => {
+    input.addEventListener('change', updateResults);
+});
+
+sizeInputs.forEach((input) => {
+    input.addEventListener('change', updateResults);
+});
+
+toppingInputs.forEach((input) => {
+    input.addEventListener('change', updateResults);
+});
+
+updateResults();
